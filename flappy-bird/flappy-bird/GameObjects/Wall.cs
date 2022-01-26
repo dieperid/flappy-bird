@@ -43,5 +43,12 @@ namespace flappy_bird.GameObjects
             _heightWall = _rmd.Next(_MIN_HEIGHT, _MAX_HEIGHT);
             _wall = new RectangleShape(new Vector2f(80, _heightWall));
         }
+
+        public float  GenerateHeight()
+        {
+            _heightWall = _rmd.Next(_MIN_HEIGHT, _MAX_HEIGHT);
+
+            return _heightWall;
+        }
     }
 }
