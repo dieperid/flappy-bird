@@ -9,7 +9,7 @@ namespace flappy_bird.GameObjects
 {
     class Wall
     {
-        private const int _MAX_HEIGHT = 500;
+        private const int _MAX_HEIGHT = 700;
         private const int _MIN_HEIGHT = 0;
         private Random _rmd = new Random();
         private RectangleShape _wall;
@@ -41,7 +41,7 @@ namespace flappy_bird.GameObjects
         public Wall()
         {
             _heightWall = _rmd.Next(_MIN_HEIGHT, _MAX_HEIGHT);
-            _wall = new RectangleShape(new Vector2f(20, _heightWall));
+            _wall = new RectangleShape(new Vector2f(80, _heightWall));
         }
     }
 }

@@ -12,18 +12,29 @@ namespace flappy_bird
     {
         #region[Attributs]
         /// <summary>
-        /// Size of the window
+        /// Size of the window for the width
         /// </summary>
-        private const uint _SIZE_WINDOW = 800;
+        private const uint _SIZE_WINDOW_WIDTH = 1920;
+        /// <summary>
+        /// Size of the window for the height
+        /// </summary>
+        private const uint _SIZE_WINDOW_HEIGHT = 1080;
         #endregion
 
         #region[Get, Set]
         /// <summary>
-        /// Getter on _SIZE_WINDOW
+        /// Getter on _SIZE_WINDOW_WIDTH
         /// </summary>
-        public uint WindowSize
+        public uint WindowWidth
         {
-            get { return _SIZE_WINDOW; }
+            get { return _SIZE_WINDOW_WIDTH; }
+        }
+        /// <summary>
+        /// Getter on _SIZE_WINDOW_HEIGHT
+        /// </summary>
+        public uint WindowHeight
+        {
+            get { return _SIZE_WINDOW_HEIGHT; }
         }
         #endregion
 
@@ -33,7 +44,7 @@ namespace flappy_bird
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Window window = new Window(_SIZE_WINDOW);
+            Window window = new Window(_SIZE_WINDOW_WIDTH, _SIZE_WINDOW_HEIGHT);
         }
     }
 }
