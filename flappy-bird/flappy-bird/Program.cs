@@ -21,23 +21,6 @@ namespace flappy_bird
         private const uint _SIZE_WINDOW_HEIGHT = 1080;
         #endregion
 
-        #region[Get, Set]
-        /// <summary>
-        /// Getter on _SIZE_WINDOW_WIDTH
-        /// </summary>
-        public uint WindowWidth
-        {
-            get { return _SIZE_WINDOW_WIDTH; }
-        }
-        /// <summary>
-        /// Getter on _SIZE_WINDOW_HEIGHT
-        /// </summary>
-        public uint WindowHeight
-        {
-            get { return _SIZE_WINDOW_HEIGHT; }
-        }
-        #endregion
-
         /// <summary>
         /// Main of the program
         /// </summary>

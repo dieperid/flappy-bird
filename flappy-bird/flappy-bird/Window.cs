@@ -13,13 +13,19 @@ namespace flappy_bird
     /// </summary>
     class Window
     {
+        private string _pathFont = "F:/CFC/Complementaire/git-repo/flappy-bird/flappy-bird/fonts/C&C-Red-Alert.ttf";
         private List<Drawable> _items = new List<Drawable>();
         private List<Wall> _listWall = new List<Wall>();
-        Wall wall;
-        bool val = false;
-        Bird bird = new Bird();
-        RectangleShape background = new RectangleShape();
-        Texture bg = new Texture("F:/CFC/Complementaire/git-repo/flappy-bird/flappy-bird/background.png");
+        private Wall _wall;
+        private Bird _bird = new Bird();
+        private RectangleShape _background;
+        Text gameOver = new Text();
+        Text score = new Text();
+
+        private Texture _bgTexture = new Texture("F:/CFC/Complementaire/git-repo/flappy-bird/flappy-bird/img/background.png");
+        private float _deltatime = 0;
+        private int _score = 0;
+        
 
         /// <summary>
         /// Constructor of the class
@@ -28,46 +34,63 @@ namespace flappy_bird
         /// <param name="windowHeight"></param>
         public Window(uint windowWidth, uint windowHeight)
         {
+            score.Font = new Font(_pathFont);
+            gameOver.Font = new Font(_pathFont);
             ContextSettings settings = new ContextSettings();
             settings.AntialiasingLevel = 8;
 
-            background.Size = new Vector2f(1920, 1080);
-            background.Texture = bg;
+            gameOver.Position = new Vector2f(100, 200);
+            gameOver.CharacterSize = 100;
+
+            score.Position = new Vector2f(100, 100);
+            score.CharacterSize = 100;
+
+
+            _background = new RectangleShape();
+            _background.Size = new Vector2f(windowWidth, windowHeight);
+            _background.Texture = _bgTexture;
 
             RenderWindow window = new RenderWindow(new VideoMode(windowWidth, windowHeight), "Flappy Bird", Styles.Fullscreen, settings);
 
-            
-            GenerateWall(windowHeight);
+            GenerateWall();
 
             // Set framerate limit to 60
             window.SetFramerateLimit(60);
 
             Clock clock = new Clock();
-            float deltatime = 0;
-            bird.Position = new Vector2f(200, 540);
-            bird.BirdShape.Origin = bird.BirdShape.Size / 2;
+            _bird.Position = new Vector2f(200, 540);
+            _bird.BirdShape.Origin = _bird.BirdShape.Size / 2;
+            
 
             while (window.IsOpen)
             {
-                deltatime = clock.ElapsedTime.AsSeconds();
+                _deltatime = clock.ElapsedTime.AsSeconds();
                 clock.Restart();
-                
-                foreach (RectangleShape item in _items)
-                {
-                    item.FillColor = Color.Green;
-                }
 
                 window.Clear();
 
-                window.Draw(background);
-                Movement(windowWidth, deltatime, windowHeight);
+                if (!CheckCollision(windowHeight) == true)
+                {
+                    Movement();
+                    _bird.Position += _bird.Velocity * _deltatime;
+                }
+
+                window.Draw(_background);
 
                 foreach (var item in _items)
                 {
-                    window.Draw(item);
+                     window.Draw(item);
                 }
                 
-                bird.Position += bird.Velocity * deltatime;
+                score.DisplayedString = $"SCORE : {_score}";
+                gameOver.DisplayedString = "YOU LOSE FDP";
+
+                if (CheckCollision(windowHeight) == true)
+                {
+                    window.Draw(gameOver);
+                }
+
+                window.Draw(score);
                 window.Display();
                 
                 if(Keyboard.IsKeyPressed(Keyboard.Key.Escape))
@@ -76,86 +99,112 @@ namespace flappy_bird
                 }
             }
         }
-        public void GenerateWall(uint windowHeight)
+        public void GenerateWall()
         {
-            float posX = 1800;
+            float posStartX = 1920;
             int indexWallTop = 0;
             for (int x = 0; x < 4; x++)
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    wall = new Wall();
+                    _wall = new Wall();
                     if (i == 0)
                     {
-                        wall.Position = new Vector2f(posX, 0);
+                        _wall.Position = new Vector2f(posStartX, -_wall.HeightWall + _wall.YPosWall);
+                        _wall.WallShape.Texture = _wall.WallTop;
                     }
                     else
                     {
-                        wall.HeightWall = wall.MaxHeight - _listWall[indexWallTop].HeightWall;
-                        wall.Position = new Vector2f(posX, windowHeight - wall.HeightWall);
+                        _wall.YPosWall = _listWall[indexWallTop].Position.Y + _wall.HeightWall + _wall.SpaceTopBottom;
+                        _wall.Position = new Vector2f(posStartX,_wall.YPosWall); 
+                        _wall.WallShape.Texture = _wall.WallBottom;
                     }
 
-                    wall.WallShape.Size = new Vector2f(80, wall.HeightWall);
-                    _listWall.Add(wall);
-                    _items.Add(wall.WallShape);
+                    _wall.WallShape.Size = new Vector2f(80, _wall.HeightWall);
+                    _listWall.Add(_wall);
+                    _items.Add(_wall.WallShape);
                 }
-                posX += 600;
+                posStartX += 600;
                 indexWallTop += 2;
             }
-            _items.Add(bird.BirdShape);
-
+            _items.Add(_bird.BirdShape);
         }
-        public void Movement(uint windowWidth, float deltatime, uint windowHeight)
+        public void Movement()
         {
             _items.Clear();
-            float moveX = 600;
             float spaceBetweenWall = 600;
             int count = 0;
             float height = 0;
             
             foreach(var item in _listWall)
             {
-                if (item.Position.X + 80 < 0)
+                if (item.Position.X + 400 <= 0)
                 {
-                    if (val == false)
-                    {
-                        item.Position = new Vector2f(windowWidth + spaceBetweenWall - 200, item.Position.Y);
-                    }
-                    else
-                    {
-                        val = true;
-                        item.Position = new Vector2f(windowWidth + spaceBetweenWall, item.Position.Y);
-                    }
-                    if(count == 0)
+                    if (count % 2 == 0)
                     {
                         height = item.GenerateHeight();
-                        item.HeightWall = height;
-                        item.Position = new Vector2f(item.Position.X, 0);
+                        item.YPosWall = height;
+                        item.Position = new Vector2f(item.Position.X, -_wall.HeightWall + item.YPosWall);
                     }
                     else
                     {
-                        item.HeightWall = item.MaxHeight - height;
-                        item.Position = new Vector2f(item.Position.X, windowHeight - item.HeightWall);
+                        item.YPosWall = height + _wall.SpaceTopBottom;
+                        item.Position = new Vector2f(item.Position.X, item.YPosWall);
                     }
                     count++;
+
+                    item.Position = new Vector2f(1920, item.Position.Y);
                 }
                 else
                 {
-                    item.Position = new Vector2f(item.Position.X - moveX * deltatime, item.Position.Y);
+                    item.Position = new Vector2f(item.Position.X - spaceBetweenWall* _deltatime, item.Position.Y);
                 }
                 item.WallShape.Size = new Vector2f(80, item.HeightWall);
 
 
-                bird.Velocity += new Vector2f(0, 300)*deltatime;
+                _bird.Velocity += new Vector2f(0, 300)*_deltatime;
                 if (Keyboard.IsKeyPressed(Keyboard.Key.Space))
                 {
-                    bird.Velocity = new Vector2f(0, -400);
+                    _bird.Velocity = new Vector2f(0, -400);
                 }
-                bird.BirdShape.Rotation = ((float)Math.Atan2(bird.Velocity.Y, 300)) * 180 / (float)Math.PI;
+                _bird.BirdShape.Rotation = ((float)Math.Atan2(_bird.Velocity.Y, 300)) * 180 / (float)Math.PI;
                 
-                _items.Add(bird.BirdShape);
+                
                 _items.Add(item.WallShape);
             }
+            _items.Add(_bird.BirdShape);
+        }
+
+        public bool CheckCollision(float windowHeight)
+        {
+            int count = 0;
+
+            foreach (var item in _listWall)
+            {
+                if (count % 2 == 0)
+                {
+                    if (_bird.Position.X >= item.Position.X && _bird.Position.X <= item.Position.X + _wall.WallWidth)
+                    {
+                        if (_bird.Position.Y >= 0 && _bird.Position.Y <= 0 + item.YPosWall)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (_bird.Position.X >= item.Position.X && _bird.Position.X <= item.Position.X + _wall.WallWidth)
+                    {
+                        if (_bird.Position.Y >= item.Position.Y && _bird.Position.Y <= windowHeight)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                count++;
+            }
+            _score += 100;
+            return false;
         }
     }
 }

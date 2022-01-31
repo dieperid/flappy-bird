@@ -34,8 +34,8 @@ namespace flappy_bird.GameObjects
 
         public Bird()
         {
-            _bird = new Texture("F:/CFC/Complementaire/git-repo/flappy-bird/flappy-bird/flappybird.png");
-            _birdShape = new RectangleShape(new Vector2f(60, 60));
+            _bird = new Texture("F:/CFC/Complementaire/git-repo/flappy-bird/flappy-bird/img/flappybird.png");
+            _birdShape = new RectangleShape(new Vector2f(80, 60));
             _birdShape.Texture = _bird;
         }
     }
