@@ -1,16 +1,11 @@
-﻿using System;
-using SFML.Graphics;
-using SFML.Window;
-using SFML.System;
-
-namespace flappy_bird
+﻿namespace flappy_bird
 {
     /// <summary>
     /// Class program
     /// </summary>
     class Program
     {
-        #region[Attributs]
+        #region[Attributes]
         /// <summary>
         /// Size of the window for the width
         /// </summary>
@@ -27,7 +22,7 @@ namespace flappy_bird
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Window window = new Window(_SIZE_WINDOW_WIDTH, _SIZE_WINDOW_HEIGHT);
+            _ = new Window(_SIZE_WINDOW_WIDTH, _SIZE_WINDOW_HEIGHT);
         }
     }
 }

@@ -19,5 +19,6 @@ E:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\net
 E:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.csproj.CoreCompileInputs.cache
 E:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.dll
 E:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.pdb
-E:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.genruntimeconfig.cache
 F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.csprojAssemblyReference.cache
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy_bird.Img.resources
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\flappy-bird.csproj.GenerateResource.cache

@@ -1,0 +1,16 @@
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\hostpolicy.dll
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\hostfxr.dll
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.exe
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.deps.json
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.runtimeconfig.json
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.runtimeconfig.dev.json
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.dll
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\bin\Debug\netcoreapp2.2\win10-x64\flappy-bird.pdb
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.csprojAssemblyReference.cache
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy_bird.Img.resources
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.csproj.GenerateResource.cache
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.csproj.CoreCompileInputs.cache
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.AssemblyInfoInputs.cache
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.AssemblyInfo.cs
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.dll
+F:\CFC\Complementaire\git-repo\flappy-bird\flappy-bird\flappy-bird\obj\Debug\netcoreapp2.2\win10-x64\flappy-bird.pdb
