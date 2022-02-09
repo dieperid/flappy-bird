@@ -14,10 +14,6 @@ namespace flappy_bird
     {
         #region[Attributes]
         /// <summary>
-        /// Font of the program
-        /// </summary>
-        private string _pathFont = @"..\..\..\..\fonts\C&C-Red-Alert.ttf";
-        /// <summary>
         /// Texture for the background
         /// </summary>
         private Texture _bgTexture = new Texture(Img.background);
@@ -82,9 +78,9 @@ namespace flappy_bird
             ContextSettings settings = new ContextSettings { AntialiasingLevel = 8 };   // Create settings for the Antialiasing
 
             // Initialize the font for the text
-            _scoreText.Font = new Font(_pathFont);
-            _gameOverText.Font = new Font(_pathFont);
-            _restartText.Font = new Font(_pathFont);
+            _scoreText.Font = new Font(Img.C_C_Red_Alert);
+            _gameOverText.Font = new Font(Img.C_C_Red_Alert);
+            _restartText.Font = new Font(Img.C_C_Red_Alert);
 
             // Initialize the position for the score text, game over text and the restart text
             _scoreText.Position = new Vector2f(50, 50);

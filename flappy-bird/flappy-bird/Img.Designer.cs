@@ -22,7 +22,7 @@ namespace flappy_bird {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Img {
+    public class Img {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace flappy_bird {
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("flappy_bird.Img", typeof(Img).Assembly);
@@ -51,7 +51,7 @@ namespace flappy_bird {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace flappy_bird {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] background {
+        public static byte[] background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
                 return ((byte[])(obj));
@@ -73,7 +73,17 @@ namespace flappy_bird {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] flappybird {
+        public static byte[] C_C_Red_Alert {
+            get {
+                object obj = ResourceManager.GetObject("C_C_Red_Alert", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        public static byte[] flappybird {
             get {
                 object obj = ResourceManager.GetObject("flappybird", resourceCulture);
                 return ((byte[])(obj));
@@ -83,7 +93,7 @@ namespace flappy_bird {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] tuyauDown {
+        public static byte[] tuyauDown {
             get {
                 object obj = ResourceManager.GetObject("tuyauDown", resourceCulture);
                 return ((byte[])(obj));
@@ -93,7 +103,7 @@ namespace flappy_bird {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] tuyauTop {
+        public static byte[] tuyauTop {
             get {
                 object obj = ResourceManager.GetObject("tuyauTop", resourceCulture);
                 return ((byte[])(obj));

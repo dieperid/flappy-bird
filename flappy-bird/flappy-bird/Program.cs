@@ -22,7 +22,7 @@
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Window window = new Window(_SIZE_WINDOW_WIDTH, _SIZE_WINDOW_HEIGHT);
+            _ = new Window(_SIZE_WINDOW_WIDTH, _SIZE_WINDOW_HEIGHT);
         }
     }
 }

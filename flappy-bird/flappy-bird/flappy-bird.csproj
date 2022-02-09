@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Img.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Img.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
