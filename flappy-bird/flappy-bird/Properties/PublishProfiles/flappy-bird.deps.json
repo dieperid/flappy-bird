@@ -1,12 +1,12 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v2.2/win10-x64",
+    "name": ".NETCoreApp,Version=v2.2/win-x64",
     "signature": "3bea855868b290b2d59b51341605460864a0c053"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {},
-    ".NETCoreApp,Version=v2.2/win10-x64": {
+    ".NETCoreApp,Version=v2.2/win-x64": {
       "flappy-bird/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "2.2.6",
